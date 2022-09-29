@@ -3,7 +3,7 @@ require_once '../functions.php';
 
 $pdo = mysql_connect();
 
-$sql = 'select * from products where views > 1';
+$sql = 'select * from products where view > 4';
 
 $query = $pdo->prepare($sql);
 $query->execute();
