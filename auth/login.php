@@ -13,7 +13,8 @@ $stmt->bindParam(":phone", $phone);
 $stmt->bindParam(":password", $password);
 $stmt->execute();
 
-$result = ($row = $stmt->fetchColumn());
+$result = true;
+if($stmt->fetchColumn() == false) $result = false;
 
 echo json_encode(array(
     'result' => $result
